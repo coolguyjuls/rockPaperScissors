@@ -1,68 +1,51 @@
 
+//clean slate//
 
-//trying omething here, fucntions x y z will be declared here in the global scope, gonna put rock paper scissor sinto each of these.
-let rock = "ROCK";
-let scissors = "SCISSORS";
-let paper = "PAPER";
-//function getCokmpCHoice will generate a random value of "rock", "paper", or "scissors" and log to console.
-let compChoice;
+function getCompChoice(){
+    //creating constant 'compChoice'//
+    const compChoice = Math.floor(Math.random()*3)+1;
+   
+//telling function what to do when a value of 1,2, or 3 in stored in the constant//
 
-function getCompChoice(compChoice){
-    compChoice = Math.floor(Math.random()*3)+1;
-    // console.log(compChoice)
-
-    switch (compChoice){
-        case 1:
-            compChoice = rock
-            console.log(compChoice)
-        break;
-        case 2:
-            compChoice = paper
-            console.log(compChoice)
-        break;
-        case 3:
-            compChoice = scissors
-            console.log(compChoice)
-        break;
-        default:
-            console.log("i give up..")
+    if (compChoice === 1){
+        return "rock";
+    } else if (compChoice === 2){
+        return "paper";
+    } else if (compChoice === 3){
+        return "scissors";
+    }else{
+        console.log('error')
     }
-    
+    return compChoice;
 }
-//funcrtion to get the users choice/input (rock paper or scissors)
+// console.log(getCompChoice())
 
 
-let userChoice;
 
-function getHumanChoice(userChoice){
-    userChoice = prompt("which will you choose- Rock, Paper, or Scissors? Type your input.");
-    let userChoiceMod = userChoice.toString().trim().toUpperCase();
-    userChoice = userChoiceMod
+function getHumanChoice(){
 
-    if (userChoiceMod === "ROCK"){
-        userHand = rock
-        console.log(userChoice)
-    } else if (userChoiceMod === "PAPER"){
-        userHand = paper
-        console.log(paper)
-    } else if (userChoiceMod === "SCISSORS"){
-        console.log(scissors)
-        userHand = scissors
+    const humanChoiceUnMod = prompt('enter rock paper scissors here');
+    const humanChoice = humanChoiceUnMod.toLowerCase().trim();
+    
+    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors"){
+        return humanChoice
+    // } else if (humanChoice === "paper"){
+    //     return humanChoice;
+    // } else if (humanChoice === "scissors"){
+    //     return humanChoice;
     } else {
-        console.log(Error("Not A  Valid Input"))
+        return "not a valid input."
     }
 }
+// console.log(getHumanChoice())
 
-//function for playing a round//
-function playRound(userHand, compChoice){
-    getCompChoice();
-    
-    getHumanChoice();
+function playRound(param1, param2){
 
-    
+    // param1 = getCompChoice();
+    // param2 = getHumanChoice();
 
+    if (param1 === "rock" && param2 === "rock"){
+        console.log("you habve tied")
+    }
 }
-// userChoiceMod === rock && compChoice === paper
-//test
-
-playRound()
+console.log(playRound(getCompChoice(), getHumanChoice()))
