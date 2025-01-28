@@ -23,7 +23,7 @@ function getCompChoice(){
     }
     return compChoice;
 }
-console.log(getCompChoice())
+// console.log(getCompChoice())
 
 
 
@@ -44,20 +44,21 @@ function getHumanChoice(){
 }
 // console.log(getHumanChoice())
 
-function playRound(param1, param2){
+function playRound(human, computer){
 
     //code to increment score variables//
 
     //code to consoloe.log string values for winning and losing//
 
-    if (param1 === "rock" && param2 === "rock"){
-        console.log("you habve tied")
+    if (human === "rock" && computer === "rock"){
+        console.log("you have tied")
     } else {
-        console.log("what si returning undefined")
+        console.log("not coded in yet")
     }
 }
 
 const humanSelection = getHumanChoice();
 const compSelection = getCompChoice();
-
+// console.log(humanSelection)
+// console.log(compSelection)
 playRound(humanSelection, compSelection)
