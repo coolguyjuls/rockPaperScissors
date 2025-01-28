@@ -51,16 +51,50 @@ function playRound(human, computer){
     //code to consoloe.log string values for winning and losing//
 
     if (human === "rock"){
+
         if (computer === "rock"){
-            console.log("You Have Tied.")
+            console.log("You Have Tied.");
+
         } else if (computer === "paper" ){ 
-            console.log("You Lose! PAPER beats ROCK.")
+            console.log("You Lose! PAPER beats ROCK.");
+            compScore++;
+
         } else if (computer === "scissors"){
-            console.log("You Win! ROCK beats SCISSORS")
+            console.log("You Win! ROCK beats SCISSORS");
+            humanScore++;
         }
-    } else {
-        console.log("not coded in yet")
+        
+    } else if (human === "scissors"){
+
+        if (computer === "rock"){
+            console.log("You Lose! ROCK beats SCISSORS.");
+            compScore++;
+
+        } else if (computer === "paper" ){ 
+            console.log("You Win! SCISSORS beats PAPER.");
+            humanScore++;
+
+        } else if (computer === "scissors"){
+            console.log("You Have Tied.");
+        }
+
+    } else if (human === "paper") {
+
+        if (computer === "rock"){
+            console.log("You Win! PAPER beats ROCK.");
+            humanScore++;
+
+        } else if (computer === "paper" ){ 
+            console.log("You Have Tied.");
+
+        } else if (computer === "scissors"){
+            console.log("You Lose! SCISSORS beats PAPER.");
+            compScore++;
+        }
+
     }
+    console.log(`you: ${humanScore}`)
+    console.log(`computer: ${compScore}`)
 }
 
 const humanSelection = getHumanChoice();
