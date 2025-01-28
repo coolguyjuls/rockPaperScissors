@@ -1,6 +1,10 @@
 
 //clean slate//
 
+//score variable//
+let humanScore = 0;
+let compScore = 0;
+
 function getCompChoice(){
 
     //creating constant 'compChoice'//
@@ -19,7 +23,7 @@ function getCompChoice(){
     }
     return compChoice;
 }
-// console.log(getCompChoice())
+console.log(getCompChoice())
 
 
 
@@ -42,8 +46,9 @@ function getHumanChoice(){
 
 function playRound(param1, param2){
 
-    // param1 = getCompChoice();
-    // param2 = getHumanChoice();
+    //code to increment score variables//
+
+    //code to consoloe.log string values for winning and losing//
 
     if (param1 === "rock" && param2 === "rock"){
         console.log("you habve tied")
@@ -51,4 +56,8 @@ function playRound(param1, param2){
         console.log("what si returning undefined")
     }
 }
-playRound(getCompChoice(), getHumanChoice())
+
+const humanSelection = getHumanChoice();
+const compSelection = getCompChoice();
+
+playRound(humanSelection, compSelection)
