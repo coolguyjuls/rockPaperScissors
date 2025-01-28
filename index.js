@@ -1,7 +1,7 @@
 
 //clean slate//
 
-//score variable//
+//score variables - global//
 let humanScore = 0;
 let compScore = 0;
 
@@ -50,8 +50,14 @@ function playRound(human, computer){
 
     //code to consoloe.log string values for winning and losing//
 
-    if (human === "rock" && computer === "rock"){
-        console.log("you have tied")
+    if (human === "rock"){
+        if (computer === "rock"){
+            console.log("You Have Tied.")
+        } else if (computer === "paper" ){ 
+            console.log("You Lose! PAPER beats ROCK.")
+        } else if (computer === "scissors"){
+            console.log("You Win! ROCK beats SCISSORS")
+        }
     } else {
         console.log("not coded in yet")
     }
