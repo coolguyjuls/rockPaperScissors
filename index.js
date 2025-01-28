@@ -2,10 +2,11 @@
 //clean slate//
 
 function getCompChoice(){
+
     //creating constant 'compChoice'//
     const compChoice = Math.floor(Math.random()*3)+1;
    
-//telling function what to do when a value of 1,2, or 3 in stored in the constant//
+//telling function what to do when a value of 1, 2, or 3 is stored in the constant//
 
     if (compChoice === 1){
         return "rock";
@@ -46,6 +47,8 @@ function playRound(param1, param2){
 
     if (param1 === "rock" && param2 === "rock"){
         console.log("you habve tied")
+    } else {
+        console.log("what si returning undefined")
     }
 }
-console.log(playRound(getCompChoice(), getHumanChoice()))
+playRound(getCompChoice(), getHumanChoice())
