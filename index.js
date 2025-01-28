@@ -13,13 +13,13 @@ function getCompChoice(){
 //telling function what to do when a value of 1, 2, or 3 is stored in the constant//
 
     if (compChoice === 1){
-        return "rock";
+        return "ROCK";
     } else if (compChoice === 2){
-        return "paper";
+        return "PAPER";
     } else if (compChoice === 3){
-        return "scissors";
+        return "SCISSORS";
     }else{
-        console.log('error')
+        console.log('ERROR')
     }
     return compChoice;
 }
@@ -29,17 +29,17 @@ function getCompChoice(){
 
 function getHumanChoice(){
 
-    const humanChoiceUnMod = prompt('enter rock paper scissors here');
-    const humanChoice = humanChoiceUnMod.toLowerCase().trim();
+    const humanChoiceUnMod = prompt('Enter ROCK, PAPER, or SCISSORS here:');
+    const humanChoice = humanChoiceUnMod.toUpperCase().trim();
     
-    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors"){
+    if (humanChoice === "ROCK" || humanChoice === "PAPER" || humanChoice === "SCISSORS"){
         return humanChoice
     // } else if (humanChoice === "paper"){
     //     return humanChoice;
     // } else if (humanChoice === "scissors"){
     //     return humanChoice;
     } else {
-        return "not a valid input."
+        return "Not a valid input. Try again."
     }
 }
 // console.log(getHumanChoice())
@@ -50,49 +50,48 @@ function playRound(human, computer){
 
     //code to consoloe.log string values for winning and losing//
 
-    if (human === "rock"){
+    if (human === "ROCK"){
 
-        if (computer === "rock"){
+        if (computer === human){
             console.log("You Have Tied.");
 
-        } else if (computer === "paper" ){ 
-            console.log("You Lose! PAPER beats ROCK.");
+        } else if (computer === "PAPER" ){ 
+            console.log(`You Lose! ${computer} beats ${human}.`);
             compScore++;
 
-        } else if (computer === "scissors"){
-            console.log("You Win! ROCK beats SCISSORS");
+        } else if (computer === "SCISSORS"){
+            console.log(`You Win! ${human} beats ${computer}`);
             humanScore++;
         }
-        
-    } else if (human === "scissors"){
 
-        if (computer === "rock"){
-            console.log("You Lose! ROCK beats SCISSORS.");
-            compScore++;
+    } else if (human === "PAPER") {
 
-        } else if (computer === "paper" ){ 
-            console.log("You Win! SCISSORS beats PAPER.");
-            humanScore++;
-
-        } else if (computer === "scissors"){
-            console.log("You Have Tied.");
-        }
-
-    } else if (human === "paper") {
-
-        if (computer === "rock"){
-            console.log("You Win! PAPER beats ROCK.");
-            humanScore++;
-
-        } else if (computer === "paper" ){ 
+        if (computer === human){
             console.log("You Have Tied.");
 
-        } else if (computer === "scissors"){
-            console.log("You Lose! SCISSORS beats PAPER.");
+        }  else if (computer === "SCISSORS"){
+            console.log(`You Lose! ${computer} beats ${human}.`);
             compScore++;
+            
+        } else if (computer === "ROCK"){ 
+            console.log(`You Win! ${human} beats ${computer}`);
+            humanScore++;
         }
 
-    }
+    } else if (human === "SCISSORS"){
+
+        if (computer === human){
+            console.log("You Have Tied.");
+            
+        } else if (computer === "ROCK" ){ 
+            console.log(`You Lose! ${computer} beats ${human}.`);
+            compScore++;
+
+        } else if (computer === "PAPER"){
+            console.log(`You Win! ${human} beats ${computer}`);
+            humanScore++;
+        }
+     }
     console.log(`you: ${humanScore}`)
     console.log(`computer: ${compScore}`)
 }
